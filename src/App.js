@@ -5,12 +5,23 @@ import './css/bootstrap.css';
 import './css/main.css';
 
 class App extends Component {
+  state = {
+    closeSidenav: true,
+    openSubmenu: false
+  }
+  //menu-sub-hidden main-hidden sub-hidden
   render() {
+    const closeSidenav = this.state.closeSidenav; 
+    console.log(closeSidenav);
     return (
-      <div id="app" className="menu-sub-hidden">
+      <div id="app" 
+      className = { closeSidenav === true ? 'menu-sub-hidden main-hidden sub-hidden'  : 'menu-sub-hidden'}>
         <Sidenav />
         <nav className="navbar fixed-top">
-          <div className="d-flex align-items-center navbar-left"><a className="menu-button d-none d-md-block"
+          <div className="cursorOn d-flex align-items-center navbar-left">
+            <button 
+              onClick={ () => this.setState({closeSidenav: !closeSidenav}) }
+              className="menu-button d-none d-md-block"
               href="/docs/gettingstarted/introduction">
               <div><svg className="main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 17">
                   <rect x="0.48" y="0.5" width="7" height="1"></rect>
@@ -21,7 +32,8 @@ class App extends Component {
                   <rect x="1.56" y="7.5" width="16" height="1"></rect>
                   <rect x="1.56" y="15.5" width="16" height="1"></rect>
                 </svg></div>
-            </a><a className="menu-button-mobile d-xs-block d-sm-block d-md-none" href="/docs/gettingstarted/introduction"><svg
+            </button>
+            <a className="menu-button-mobile d-xs-block d-sm-block d-md-none" href="/docs/gettingstarted/introduction"><svg
                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
                 <rect x="0.5" y="0.5" width="25" height="1"></rect>
                 <rect x="0.5" y="7.5" width="25" height="1"></rect>

@@ -2,6 +2,10 @@
   width: 100%
 }
 
+.cursorOn {
+  cursor: pointer;
+}
+
 .CircularProgressbar .CircularProgressbar-path {
   stroke: #3e98c7;
   stroke-linecap: round;
@@ -2788,8 +2792,11 @@ button {
 
 .navbar .menu-button {
   color: #8f8f8f;
-  width: 120px;
-  text-align: center
+  width: 39px;
+  margin-left: 60px;
+  background-color: transparent;
+  text-align: center;
+  border: none;
 }
 
 .navbar .menu-button svg {
@@ -2875,6 +2882,8 @@ button {
   background: url('../img/svg/logo-black.svg') no-repeat;
   background-position: 50%
 }
+
+
 
 .navbar .navbar-logo .logo-mobile {
   width: 100%;
